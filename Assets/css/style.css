@@ -1,0 +1,349 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif
+}
+
+/*Contenedor Grid mobile*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 9% auto 12% 14%;
+    grid-template-areas: 
+    "nav menu"
+    "main main"
+    "suscripcion suscripcion"
+    "footer footer";
+    height: 100vh;
+}
+
+/*Seccion Menu*/
+.nav-section {
+    grid-area: nav;
+    display: flex;   
+    padding-left: 5px;     
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 4px solid #ffc0cb;
+}
+
+.marca{
+    display: flex;
+    padding-left: 20px;
+    border-bottom: 4px solid pink;
+    width: 100%;
+}
+
+.anillo {
+    width: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    animation: rotate 4s infinite 4s;
+    animation-direction: reverse;
+}
+
+@keyframes rotate{
+    0% {
+       transform: rotatey(0deg);
+    }
+    50%{
+        transform: rotatey(180deg);
+    }
+    100% {
+        transform: rotatey(360deg);
+        }
+}
+
+.logo {
+    display: flex;
+    justify-content: left;
+    padding-top: 15px;
+    padding-left: 10px;
+    height: 35px;
+}
+
+.asidebar{
+    display: none;
+}
+
+.marca ul{   
+    grid-area: menu;
+    display: flex;
+    margin-left: 30%;
+    background-color: #ffffff;
+    padding-top: 16px;
+    padding-bottom: 5px;  
+}
+
+.marca ul li{
+    display: flex; 
+    align-items: center;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.marca ul a{
+    color: #020202;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;  
+}
+
+.marca ul a:hover {
+    background-color:#e4e4e4;
+    padding: 4px 10px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+/*Contenedor Main*/
+main {
+    grid-area: main;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f3f3f3;
+    align-items: center;
+    width: 45%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5%;
+    box-shadow: 3px 3px 3px gray;
+    cursor: pointer;
+    transition: width 0.5s linear;
+}
+
+.card_container:hover {
+    width: 50%;
+    background: linear-gradient(to top left, #ffffff, #ffc0cb);;
+}
+
+.card_container h5{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.card_container button{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: background-color 0.8s linear;
+}
+
+.card_container button:hover{
+    background-color: #808080;
+}
+
+ .Sale button {
+    background-color: #ff0000;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+.card_container a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.card_container img{    
+    width: 100%; 
+    margin-top: 20px;   
+}
+
+.Suscripcion {
+    grid-area: suscripcion;
+    display: flex;
+    justify-content: center;
+    background-color: #ff8fa2;
+    align-items: center;
+    padding: 10px;
+}
+
+.Suscripcion p{
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 30px;
+}
+
+.Suscripcion button{
+    background-color: #000000;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.8s linear;
+}
+
+.Suscripcion button:hover{
+    background-color: #808080;
+    border: none;
+}
+
+.Suscripcion a{
+    color:#ffffff;
+    text-decoration: none;
+    padding:5px;
+    font-size: 12px;
+}
+
+/*Footer*/
+footer {
+    grid-area: footer;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #000000; 
+    color: #ffffff; 
+    padding: 10px;          
+}
+
+.redes_sociales i{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.redes_sociales i:hover{
+    color: #808080;
+}
+
+.redes_sociales a{
+    text-decoration: none;   
+    color: #ffffff;
+}
+
+.datos_contacto p{
+    padding: 4px;
+    font-size: 12px;
+}
+
+/*Media Queries Tablet*/
+@media screen and (min-width: 576px) {
+            
+    .grid-container {
+        display: grid;
+        grid-template-columns: 12rem auto;
+        grid-template-rows: 12% auto 10% 14%;
+        grid-template-areas:
+        "nav nav"
+        "asidebar main"
+        "suscripcion suscripcion "
+        "footer footer";
+        min-height: 100vh;
+    }
+    
+    .nav-section {
+        position: none;
+    } 
+
+    .marca ul {
+        display: none;
+    }
+
+    aside {
+        grid-area: asidebar;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;       
+    }
+
+    aside button a {
+        padding-left: 8px;
+    }
+
+    .asidebar{
+        display: block;  
+    }
+
+    aside li{
+        display: flex;
+        text-decoration: none;
+        padding-top: 25px;
+        padding-left: 40px;
+    }
+
+    aside a{
+        color: #020202;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 20px;
+        transition: all 0.5s ease-in-out;  
+    }
+
+    aside a:hover {
+        background-color:#e4e4e4;
+        padding: 8px 16px;
+        box-shadow: 2px 2px 2px gray;
+    }
+
+    .Oferta a{
+        font-weight: bold;
+        animation: etiqueta 1s infinite 1s;
+    }
+
+    @keyframes etiqueta {
+        0%{
+            color:#ff0000;
+        }
+        50% {
+            color: hwb(300 0% 0%);
+        }   
+        100% {
+            color:pink;
+        }
+    }
+    
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        margin-top: 0;
+        height: auto;  
+        padding: 10px;  
+        overflow-y: scroll;   
+        height: auto;
+    }
+    
+    .card_container{
+        height: 90%;
+        width: 90%;
+    }
+
+    .card_container:hover {
+        width: 95%;
+    }
+}
+
+/*Media Queries Escritorio*/
+@media screen and (min-width: 992px) {              
+     main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+}
+    
